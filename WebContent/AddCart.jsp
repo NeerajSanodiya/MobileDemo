@@ -11,7 +11,7 @@
 <body>
 <h1>ADD CART PAGE</h1>
 <h2>Show Cart</h2>
-<button><img src="Image/addcart.png" height="50" width="50" ></button>
+
 	<jsp:useBean id="mobileController" class="controller.MobileController"></jsp:useBean>
 	<%
 	List <MobileDTO>mList=mobileController.getMobile(request, response);
