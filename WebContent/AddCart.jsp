@@ -18,7 +18,7 @@
 			%>		
 		<%
 			for(MobileDTO mobileDTO:mList){%>
-			<img src="<%=mobileDTO.getImage_path()%>" height="100" width="100"></img>
+			<img src="<%=mobileDTO.getImage_path()%>" height="383px" width="168px"></img>
 	s		
 			</br> op :	<%=mobileDTO.getOs() %>
 			
