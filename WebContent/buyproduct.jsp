@@ -1,4 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Shop Around</title>
@@ -18,7 +20,7 @@
     <!-- Cart -->
     <div id="cart"> <a href="#" class="cart-link">Your Shopping Cart</a>
       <div class="cl">&nbsp;</div>
-      <span>Articles: <strong>4</strong></span> &nbsp;&nbsp; <span>Cost: <strong>$250.99</strong></span> </div>
+      <span>Articles: <strong>4</strong></span> &nbsp;&nbsp; <span>!-Cost: <strong>$250.99</strong></span> </div>
     <!-- End Cart -->
     <!-- Navigation -->
     <div id="navigation">
@@ -53,41 +55,25 @@
       <!-- End Content Slider -->
       <!-- Products -->
       <div class="products">
+      <h1 align="center">Buy Product</h1>
         <div class="cl">&nbsp;</div>
         <ul>
-          <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-          <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-          <li class="last"> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMEN’S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-        </ul>
+
+<table>
+<tr>
+<td ><img src="Image/1.png" height="200" width="300"  ></td>
+Price:
+  
+
+</tr></table>
+</form>        
+
+			</ul>
+        
+        
+        </div>
         <div class="cl">&nbsp;</div>
-      </div>
+      
       <!-- End Products -->
     </div>
     <!-- End Content -->
@@ -216,5 +202,5 @@
   <!-- End Footer -->
 </div>
 <!-- End Shell -->
-<!--<div>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>--></body>
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
 </html>

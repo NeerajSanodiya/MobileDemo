@@ -19,7 +19,7 @@
 		<%
 			for(MobileDTO mobileDTO:mList){%>
 			<img src="<%=mobileDTO.getImage_path()%>" height="100" width="100"></img>
-			
+	s		
 			</br> op :	<%=mobileDTO.getOs() %>
 			
 			</br> Company Name :<%=mobileDTO.getCompany_Name() %>

@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@page import="dto.MobileDTO"%>
+<%@page import="java.util.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Shop Around</title>
@@ -20,18 +20,16 @@
     <!-- Cart -->
     <div id="cart"> <a href="#" class="cart-link">Your Shopping Cart</a>
       <div class="cl">&nbsp;</div>
-      <span>Articles: <strong>4</strong></span> &nbsp;&nbsp; <span>-Cost: <strong>$250.99</strong></span> </div>
+      <span>Articles: <strong>4&nbsp;</strong></span> &nbsp;<span>- Cost: <strong>$250.99</strong></span> </div>
     <!-- End Cart -->
     <!-- Navigation -->
     <div id="navigation">
       <ul>
-      <li><a href="#" class="active">Home</a></li>
-        <li><a href="login.jsp">Login</a></li>
+        <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Support</a></li>
         <li><a href="#">My Account</a></li>
         <li><a href="#">The Store</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="showdetail.jsp">Show Page</a></li>
       </ul>
     </div>
     <!-- End Navigation -->
@@ -56,42 +54,28 @@
       </div>
       <!-- End Content Slider -->
       <!-- Products -->
-      <div class="products">
-        <div class="cl">&nbsp;</div>
+      <jsp:useBean id="mobileController" class="controller.MobileController"></jsp:useBean>
+	<%
+	List <MobileDTO>mList=mobileController.getMobile(request, response);
+			%><div class="products"><table><tr>
+    <%
+			for(MobileDTO mobileDTO:mList){%>		
+       <td> <div class="cl">&nbsp;</div>
         <ul>
-          <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
+          <li> <a href="buyproduct.jsp"><img src="<%=mobileDTO.getImage_path()%>" alt="" height="383" width="231"/></a>
             <div class="product-info">
-              <h3>LOREM IPSUM</h3>
+              <h3>Mobile</h3>
               <div class="product-desc">
-                <h4>WOMENâ€™S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
+                <h4><%=mobileDTO.getOs() %>€™</h4>
+                <p><%=mobileDTO.getCompany_Name() %><br />
+                  <%=mobileDTO.getModel_Number()%></p>
+                <strong class="price">$<%=mobileDTO.getPrice() %></strong> </div>
             </div>
           </li>
-          <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMENâ€™S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-          <li class="last"> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-            <div class="product-info">
-              <h3>LOREM IPSUM</h3>
-              <div class="product-desc">
-                <h4>WOMENâ€™S</h4>
-                <p>Lorem ipsum dolor sit<br />
-                  amet</p>
-                <strong class="price">$58.99</strong> </div>
-            </div>
-          </li>
-        </ul>
+         </ul>
         <div class="cl">&nbsp;</div>
-      </div>
+      	<%}%></td></tr>
+						</table></div>
       <!-- End Products -->
     </div>
     <!-- End Content -->
@@ -220,8 +204,5 @@
   <!-- End Footer -->
 </div>
 <!-- End Shell -->
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+<!--<div>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>--></body>
 </html>
-
-
-

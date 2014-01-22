@@ -81,7 +81,6 @@ public class MobileController {
                         mobileDTO.setImage_path("MyImage/"+l+ext);
 					MobileDAOImpl mobileDAOImpl=new MobileDAOImpl();
 						mobileDAOImpl.addMobile(mobileDTO);
-						
 					}
 				}
 			}
