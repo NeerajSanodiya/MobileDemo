@@ -62,8 +62,10 @@
 <table>
 <tr>
 <td ><img src="Image/1.png" height="200" width="300"  ></td>
-Price:
-  
+Price:</br>
+</br>
+Color:</br>
+<td><input type="submit" name="AddtoCart" value="BUY Product"></td>  
 
 </tr></table>
 </form>        
