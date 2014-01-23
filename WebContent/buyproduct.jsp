@@ -1,5 +1,30 @@
+<%@page import="org.apache.catalina.ant.SessionsTask"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%> 
+   <%
+	String image_path = request.getParameter("image_path");
+  	 System.out.println("Image_Path>>>>>"+image_path);
+  	 
+  	 String o_s = request.getParameter("o_s");
+    System.out.println("Os>>>>>>"+o_s);
+    
+   	String company_name = request.getParameter("company_name"); 
+   	System.out.println("Company_Name>>>>>"+company_name);
+   	
+   	String model_number = request.getParameter("model_number");
+   	System.out.println("model_number>>>>>"+model_number);
+   	
+   	String price = request.getParameter("price");
+   	System.out.println("Os>>>>"+price);
+   	
+   	session.setAttribute("Image_Path", image_path);
+   	session.setAttribute("O_S", o_s);
+   	session.setAttribute("Company_Name", company_name);
+   	session.setAttribute("Model_Number", model_number);
+   	session.setAttribute("Price", price);
+   	
+   
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -61,10 +86,11 @@
 
 <table>
 <tr>
-<td ><img src="Image/1.png" height="200" width="300"  ></td>
-Price:</br>
-</br>
-Color:</br>
+<td ><img src="<%out.print(session.getAttribute("Image_Path")); %>" name="image" height="200" width="300"  ></td>
+OPERATING SYSTEM:-<%out.println(session.getAttribute("O_S")); %></br>
+Company_Name:<%  out.println(session.getAttribute("Company_Name") + "<br/>");%></br>
+Model_Number:<%  out.println(session.getAttribute("Model_Number") + "<br/>");%></br>
+Price:<%  out.println(session.getAttribute("Price") + "<br/>");%></br>
 <td><input type="submit" name="AddtoCart" value="BUY Product"></td>  
 
 </tr></table>

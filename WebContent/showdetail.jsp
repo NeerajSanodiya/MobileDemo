@@ -69,32 +69,57 @@
 					List<MobileDTO> mList = mobileController.getMobile(request,
 							response);
 				%><div class="products">
-					
-					  <table>
-    <%int count = 0;
-			for (MobileDTO mobileDTO : mList) {%>	<%if (count % 3 == 0) {%><tr>	
-			<%}%>
-       <td> <div class="cl">&nbsp;</div>
-        <ul>
-          <li> <a href="buyproduct.jsp"><img src="<%=mobileDTO.getImage_path()%>" alt="" height="200" width="100" style="width : 231px; height : 373px;"/></a>
-            <div class="product-info">
-              <h3>Mobile</h3>
-              <div class="product-desc">
-                <h4><%=mobileDTO.getOs()%>€™</h4>
-                <p><%=mobileDTO.getCompany_Name()%><br />
-                  <%=mobileDTO.getModel_Number()%></p>
-                <strong class="price">$<%=mobileDTO.getPrice()%></strong> </div>
-            </div>
-          </li>
-         </ul>
-        <div class="cl">&nbsp;</div></td>
-         <%if (count % 3 == 0) {%>
-        
-       
-      	<%}
-				count++;
-			}%>
-						</table>
+
+					<table>
+						<%
+							int count = 0;
+							for (MobileDTO mobileDTO : mList) {
+						%>
+						<%
+							if (count % 3 == 0) {
+						%><tr>
+							<%
+								}
+							%>
+							<td>
+								<div class="cl">&nbsp;</div>
+								<ul>
+									<li><a
+										href="buyproduct.jsp?image_path=<%=mobileDTO.getImage_path()%>&o_s=<%=mobileDTO.getOs()%>&company_name=<%=mobileDTO.getCompany_Name()%>&model_number=<%=mobileDTO.getModel_Number()%>&price=<%=mobileDTO.getPrice()%>">
+										
+										<img src="<%=mobileDTO.getImage_path()%>" height="200" width="100"
+											style="width: 231px; height: 373px;" name="image_path" /></a>
+										<div class="product-info">
+											<h3>Mobile</h3>
+											<div class="product-desc">
+												<h4>
+													<input type="hidden" name="o_s"
+														value="<%=mobileDTO.getOs()%>" /><%=mobileDTO.getOs()%>€™
+												</h4>
+												<p>
+													<input type="hidden" name="company_name"
+														value="<%=mobileDTO.getCompany_Name()%>" /><%=mobileDTO.getCompany_Name()%><br />
+													<input type="hidden" name="model_number"
+														value="<%=mobileDTO.getModel_Number()%>" /><%=mobileDTO.getModel_Number()%></p>
+												<input type="hidden" name="price"
+													value="<%=mobileDTO.getPrice()%>" /> <strong class="price">$<%=mobileDTO.getPrice()%></strong>
+											</div>
+										</div></li>
+								</ul>
+								<div class="cl">&nbsp;</div>
+							</td>
+							<%
+								if (count % 3 == 0) {
+							%>
+
+
+							<%
+								}
+									count++;
+								}
+							%>
+						
+					</table>
 				</div>
 				<!-- End Products -->
 			</div>
